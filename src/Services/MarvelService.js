@@ -1,8 +1,8 @@
 import axios from '../Utils/Axios';
 
 class MarvelService {
-  consultarPersonagens() {
-    return axios.get('/v1/public/characters');
+  consultarPersonagens(limit, offset) {
+    return axios.get(`/v1/public/characters?limit=${limit}&offset=${offset}`);
   }
 }
 

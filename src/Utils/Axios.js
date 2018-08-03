@@ -9,7 +9,13 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   function(config) {
-    config.url = `${config.url}?apikey=99316b009b2f46e587171504258be133`
+
+    if(config.url.indexOf("?") > -1){
+        config.url = `${config.url}&apikey=99316b009b2f46e587171504258be133`
+    }
+    else {
+        config.url = `${config.url}?apikey=99316b009b2f46e587171504258be133`
+    }
 
     return config;
   },

@@ -29,10 +29,10 @@ export default function calendarioAssembleiaReducer(state = initialState, action
   }
 }
 
-export function consultarPersonagens() {
+export function consultarPersonagens(limit, offset) {
   return {
     types: [CONSULTAR_PERSONAGENS_REQUEST, CONSULTAR_PERSONAGENS_SUCCESS, CONSULTAR_PERSONAGENS_ERROR],
-    invoke: () => marvelService.consultarPersonagens(),
+    invoke: () => marvelService.consultarPersonagens(limit, offset),
     handleApiError: true
   };
 }

@@ -1,14 +1,22 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './Store/CreateStore';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import Layout from './Views/Layout';
 import HomeView from './Views/Home/HomeView';
+import PersonagemView from './Views/Personagem/PersonagemView';
 
 const MainApp = () => (
     <Provider store={store}>
-        <Router>           
-            <Route exact path="/" component={HomeView} />
-        </Router>
+        <Layout>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={HomeView} />
+                    <Route path="/personagem/:id" component={PersonagemView} />
+                </Switch>
+            </BrowserRouter>
+        </Layout>
     </Provider>
 );
 
