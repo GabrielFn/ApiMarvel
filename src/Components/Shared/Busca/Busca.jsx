@@ -30,7 +30,7 @@ class Busca extends React.Component {
     handleOrdem() {
         let ordem = "";
 
-        if(this.state.ordem == "name"){
+        if(this.state.ordem === "name"){
             ordem = "-name";
         }
         else {
@@ -53,7 +53,7 @@ class Busca extends React.Component {
                         <div className="ordenacao">
                             <a onClick={ this.handleOrdem }>
                                 <span>A-Z</span>
-                                <img src={ this.state.ordem === "name" ? arrowDown : arrowUp} />
+                                <img src={ this.state.ordem === "name" ? arrowDown : arrowUp} alt="ordenar" />
                             </a>
                         </div>
                     </div>

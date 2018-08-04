@@ -28,15 +28,11 @@ class ListaPersonagensContainer extends React.Component {
     }
 
     consultaPersonagens(offset, ordem){
-        this.props.consultarPersonagens(offset, ordem).then((result) => {
-            this.setState({ quantidadeListada: offset + result.data.data.count });
-        });
+        this.props.consultarPersonagens(offset, ordem);
     }
 
     buscaPersonagens(name, offset, ordem){
-        this.props.buscaPersonagens(name, offset, ordem).then((result) => {
-            this.setState({ quantidadeListada: offset + result.data.data.count });
-        });
+        this.props.buscaPersonagens(name, offset, ordem);
     }
 
     handleOrdem(valor, ordem) {
@@ -65,10 +61,10 @@ class ListaPersonagensContainer extends React.Component {
         let offset = 0;
 
         if(direcao === "next"){
-            offset = this.state.quantidadeListada;
+            offset = this.props.personagensState.quantidadeListada;
         }
         else if(direcao === "previous"){
-            offset = this.state.quantidadeListada - 24;
+            offset = this.props.personagensState.quantidadeListada - 24;
         }
 
         if(isEmpty(contexto)){
@@ -96,7 +92,7 @@ class ListaPersonagensContainer extends React.Component {
                 <div>
                     <Paginacao quantidadeItens={ this.props.personagensState.dataSource.data ? this.props.personagensState.dataSource.data.total : 0 }
                                quantidadePagina={12}
-                               quantidadeListada={ this.state.quantidadeListada }
+                               quantidadeListada={ this.props.personagensState.quantidadeListada }
                                handlePaginacao={this.handlePaginacao} />
                 </div>
             </Box>

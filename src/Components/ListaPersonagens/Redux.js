@@ -7,6 +7,7 @@ const CONSULTAR_PERSONAGENS_ERROR   = 'CONSULTAR_PERSONAGENS_ERROR';
 const initialState = {
   contextoBusca: "",
   ordem: "name",
+  quantidadeListada: 0,
   loading: false,
   dataSource: []
 };
@@ -15,12 +16,12 @@ function consultarPersonagensRequest(state) {
   return { ...state, ...{ loading: true } };
 }
 function consultarPersonagensSuccess(state, action) {
-  console.log('Valor da ação', action);
   return { ...state, ...{ 
     loading: false, 
     dataSource: action.data , 
     contextoBusca: action.contextoBusca,
-    ordem: action.ordem
+    ordem: action.ordem,
+    quantidadeListada: action.offset + action.data.data.results.length
   }};
 }
 function consultarPersonagensError(state) {
@@ -43,7 +44,8 @@ export function consultarPersonagens(offset, ordem) {
     invoke: () => marvelService.consultarPersonagens(offset, ordem),
     handleApiError: true,
     contextoBusca: "",
-    ordem: ordem
+    ordem,
+    offset
   };
 }
 
@@ -53,6 +55,7 @@ export function buscaPersonagens(name, offset, ordem) {
     invoke: () => marvelService.buscaPersonagens(name, offset, ordem),
     handleApiError: true,
     contextoBusca: name,
-    ordem: ordem
+    ordem,
+    offset
   };
 }
