@@ -4,7 +4,7 @@ import { store } from './Store/CreateStore';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Layout from './Views/Layout';
-import HomeView from './Views/Home/HomeView';
+import ListaPersonagensView from './Views/ListaPersonagens/ListaPersonagensView';
 import PersonagemView from './Views/Personagem/PersonagemView';
 
 const MainApp = () => (
@@ -12,7 +12,7 @@ const MainApp = () => (
         <Layout>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={HomeView} />
+                    <Route exact path="/" component={ListaPersonagensView} />
                     <Route path="/personagem/:id" component={PersonagemView} />
                 </Switch>
             </BrowserRouter>

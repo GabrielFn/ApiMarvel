@@ -1,0 +1,47 @@
+.heroi {
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: solid 1px #d8dde6;
+    display: inline-block;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-bottom: 2px solid red;
+    box-shadow: 0 2px 6px 0 rgba(69, 91, 99, 0.08);
+}
+
+.img-heroi {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+}
+
+.titulo-heroi {
+    text-align: center;
+    margin-top: 15px;
+    color: #4a4a4a;
+}
+
+.titulo-heroi > p.nome {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    height: auto;
+}
+
+.titulo-heroi > p.descricao {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.titulo-heroi > hr {
+    width: 54px;
+
+}

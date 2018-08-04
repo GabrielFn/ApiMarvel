@@ -1,4 +1,4 @@
-import Home from './Home/Redux';
+import ListaPersonagens from './ListaPersonagens/Redux';
 export default {
-    Home
+    ListaPersonagens
 }
