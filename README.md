@@ -6,7 +6,7 @@ Este projeto foi criado com react-create-app
 ```
 npm install
 
-npm starts
+npm start
 ```
 
 ## Implementando um component
