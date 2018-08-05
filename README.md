@@ -7,6 +7,9 @@ Este projeto foi criado com react-create-app
 npm install
 
 npm start
+
+Url de acesso
+http://localhost:3000
 ```
 
 ## Implementando um component
